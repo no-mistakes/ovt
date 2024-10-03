@@ -30,6 +30,10 @@ nav {
     margin-top: 10px;
 }
 
+nav a#active {
+    color: tomato;
+}
+
 nav a {
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
