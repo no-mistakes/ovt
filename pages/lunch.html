@@ -99,6 +99,98 @@
                 </div>
             </div>
         </section>
+        <section>
+            <h2>Сделать заказ</h2>
+            <form action="https://httpbin.org/post" method="POST">
+                <fieldset>
+                    <legend>Ваш заказ</legend>
+                    <div>
+                        <label for="soup">Выберите суп:</label>
+                        <select id="soup" name="soup" required>
+                            <option value="">Не выбрано</option>
+                            <option value="borsch">Тыквенный суп-пюре с ржаными сухариками</option>
+                            <option value="gaspacho">Мясной суп с картофелем</option>
+                            <option value="miso">Традиционный русский суп с зеленью</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="main-dish">Выберите главное блюдо:</label>
+                        <select id="main-dish" name="main-dish" required>
+                            <option value="">Не выбрано</option>
+                            <option value="steak">Жареное мясо с овощами и сметаной</option>
+                            <option value="pasta">Глазунья с колбаской, гренками и овощами</option>
+                            <option value="sushi">Куриная грудка с овощами и зеленью</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="drink">Выберите напиток:</label>
+                        <select id="drink" name="drink" required>
+                            <option value="">Не выбрано</option>
+                            <option value="tea">Сок апельсиновый свежевыжатый</option>
+                            <option value="coffee">Коктейль с клубникой и лаймом</option>
+                            <option value="juice">Чай травяной с корицей</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="comments">Комментарии к заказу:</label>
+                        <textarea id="comments" name="comments" rows="4"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Ваши данные</legend>
+
+                    <div>
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div>
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div>
+                        <label for="address">Адрес:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+
+                    <div>
+                        <label for="subscribe">Подписка на рассылку:</label>
+                        <input type="checkbox" id="subscribe" name="subscribe" checked>
+                    </div>
+
+                    <div>
+                        <label>Выбор времени доставки:</label>
+                        <input type="radio" id="morning" name="delivery-time" value="morning" required>
+                        <label for="morning">Утро</label>
+
+                        <input type="radio" id="afternoon" name="delivery-time" value="afternoon" required>
+                        <label for="afternoon">День</label>
+
+                        <input type="radio" id="evening" name="delivery-time" value="evening" required>
+                        <label for="evening">Вечер</label>
+                    </div>
+
+                    <div>
+                        <label for="delivery-time">Укажите время доставки:</label>
+                        <input type="time" id="delivery-time" name="delivery-time" min="07:00" max="23:00" step="300" required>
+                    </div>
+                </fieldset>
+                <div>
+                    <button type="reset">Сбросить</button>
+                    <button type="submit">Отправить</button>
+                </div>
+
+            </form>
+        </section>
     </main>
     <footer id="Contacts">
         <p>Позвонить нам:</p> <a href="#">+7 (000) 000-00-00</a>
