@@ -1,263 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Construct</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/styleLunch.css">
-    <script src="../scripts/API.js" defer></script>
-    <script src="../scripts/arrSort.js" defer></script>
-    <script src="../scripts/cards.js" defer></script>
-    <script src="../scripts/basket.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styleLunch.css">
+  <link rel="stylesheet" href="../styles/styleBasket.css">
+  <link rel="stylesheet" href="../styles/styleLunch+.css">
+  <link rel="stylesheet" href="../styles/basket.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Food Construct</title>
+
+  <script type="module" src="../scripts/make_lunch.js"></script>
+  <script type="module" src="../scripts/notifications.js"></script>
+  <script type="module" src="../scripts/load_dishes.js"></script>
+  <script type="module" src="../scripts/order.js"></script>
 </head>
 
 <body>
+  <header>
 
-    <header>
-        <h1>Food Construct</h1>
+    <h1>Food Construct</h1>
 
-        <nav>
-            <a href="../index.html">Главная</a>
-            <a href="../lunch.html" id="active">Собрать ланч</a>
-            <a href="#Contacts">Контакты</a>
-        </nav>
+    <nav>
+        <a href="../index.html">Главная</a>
+        <a class="active" href="lunch.html" id="active">Собрать ланч</a>
+        <a href="./basket.html">Оформить заказ</a>
+        <a href="../pages/story.html">История</a>
+        <a href="#Contacts">Контакты</a>
+    </nav>
 
-        <h1 style="text-align: center;">Вы можете заказть блюда следующих сочетаний</h1>
+  </header>
 
-        <div id="options-block">
-            <div class="option">
-                <div>
-                    <img class="icon" src="../images/icons/soup.png">
-                    <p>Суп</p>
-                </div>         
-                <div>
-                    <img class="icon" src="../images/icons/main.png">
-                    <p>Главное блюдо</p>
-                </div>     
-                <div>
-                    <img class="icon" src="../images/icons/salad.png">
-                    <p>Салат</p>
-                </div>     
-                <div>
-                    <img class="icon" src="../images/icons/drink.png">
-                    <p>Напиток</p>
-                </div>            
-            </div>
-            <div class="option">
-                <div>
-                    <img class="icon" src="../images/icons/soup.png">
-                    <p>Суп</p>
-                </div>         
-                <div>
-                    <img class="icon" src="../images/icons/main.png">
-                    <p>Главное блюдо</p>
-                </div>     
-                <div>
-                    <img class="icon" src="../images/icons/drink.png">
-                    <p>Напиток</p>
-                </div>            
-            </div>
-            <div class="option">
-                <div>
-                    <img class="icon" src="../images/icons/soup.png">
-                    <p>Суп</p>
-                </div>         
-                <div>
-                    <img class="icon" src="../images/icons/salad.png">
-                    <p>Салат</p>
-                </div>     
-                <div>
-                    <img class="icon" src="../images/icons/drink.png">
-                    <p>Напиток</p>
-                </div>            
-            </div>
-            <div class="option">      
-                <div>
-                    <img class="icon" src="../images/icons/main.png">
-                    <p>Главное блюдо</p>
-                </div>     
-                <div>
-                    <img class="icon" src="../images/icons/salad.png">
-                    <p>Салат</p>
-                </div>     
-                <div>
-                    <img class="icon" src="../images/icons/drink.png">
-                    <p>Напиток</p>
-                </div>            
-            </div>
-            <div class="option">    
-                <div>
-                    <img class="icon" src="../images/icons/main.png">
-                    <p>Главное блюдо</p>
-                </div>      
-                <div>
-                    <img class="icon" src="../images/icons/drink.png">
-                    <p>Напиток</p>
-                </div>            
-            </div>
-            <div class="option">
-                <div>
-                    <img class="icon" src="../images/icons/desert.png">
-                    <p>Десерт*</p>
-                    <p style="font-size:1em; font-style:italic;">*Можно добавить к любому заказу</p>
-                </div>              
-            </div>
-        </div>
-    </header>
+  <main>
 
-    <main>
-        <div id="soup-filters">
-            <button class="filter-button" data-kind="fish" onclick="load_soup_blocks(filter='fish')">Рыбное</button>
-            <button class="filter-button" data-kind="meat" onclick="load_soup_blocks(filter='meat')">Мясное</button>
-            <button class="filter-button" data-kind="veg" onclick="load_soup_blocks(filter='veg')">Вегетарианское</button>
+    <h2 class="options_title">Вы можете заказть блюда следующих сочетаний</h2>
+
+    <div class="options">
+      <div class="lunch_options">
+
+        <div class="lunch_dish">
+          <img src="../images/icons/soup.png" alt="soup">
+          <p>Суп</p>
         </div>
-        <section id="soup">
-        </section>
-        <div id="dish-filters">
-            <button class="filter-button" data-kind="fish" onclick="load_main_dish_blocks(filter='fish')">Рыбное</button>
-            <button class="filter-button" data-kind="meat" onclick="load_main_dish_blocks(filter='meat')">Мясное</button>
-            <button class="filter-button" data-kind="veg" onclick="load_main_dish_blocks(filter='veg')">Вегетарианское</button>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/main.png" alt="main">
+          <p>Главное блюдо</p>
         </div>
-        <section id="main_dish">
-        </section>
-        <div id="drink-filters">
-            <button class="filter-button" data-kind="hot" onclick="load_beverages_blocks(filter='hot')">Горячее</button>
-            <button class="filter-button" data-kind="cold" onclick="load_beverages_blocks(filter='cold')">Холодное</button>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/salad.png" alt="salad">
+          <p>Салат</p>
         </div>
-        <section id ='drink'>
-        </section>
-        <div id="salad-filters">
-            <button class="filter-button" data-kind="fish" onclick="load_salads(filter='fish')">Рыбное</button>
-            <button class="filter-button" data-kind="meat" onclick="load_salads(filter='meat')">Мясное</button>
-            <button class="filter-button" data-kind="veg" onclick="load_salads(filter='veg')">Вегетарианское</button>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/drink.png" alt="drink">
+          <p>Напиток</p>
         </div>
-        <section id ='salad'>
-        </section>
-        <div id="dessert-filters">
-            <button class="filter-button" data-kind="small" onclick="load_desserts(filter='small')">Малая порция</button>
-            <button class="filter-button" data-kind="medium" onclick="load_desserts(filter='medium')">Средняя порция</button>
-            <button class="filter-button" data-kind="large" onclick="load_desserts(filter='large')">Большая порция</button>
+
+      </div>
+
+      <div class="lunch_options">
+
+        <div class="lunch_dish">
+          <img src="../images/icons/soup.png" alt="soup">
+          <p>Суп</p>
         </div>
-        <section id ='dessert'>
-        </section>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/main.png" alt="main">
+          <p>Главное блюдо</p>
+        </div>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+
+      </div>
+
+      <div class="lunch_options">
+
+        <div class="lunch_dish">
+          <img src="../images/icons/soup.png" alt="soup">
+          <p>Суп</p>
+        </div>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/salad.png" alt="salad">
+          <p>Салат</p>
+        </div>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+
+      </div>
+
+      <div class="lunch_options">
+
+        <div class="lunch_dish">
+          <img src="../images/icons/main.png" alt="main">
+          <p>Главное блюдо</p>
+        </div>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/salad.png" alt="salad">
+          <p>Салат</p>
+        </div>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+
+      </div>
+
+      <div class="lunch_options">
+
+        <div class="lunch_dish">
+          <img src="../images/icons/main.png" alt="main">
+          <p>Главное блюдо</p>
+        </div>
+
+        <div class="lunch_dish">
+          <img src="../images/icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+
+      </div>
+
+      <div class="lunch_options">
+
+        <div class="lunch_dish">
+          <img src="../images/icons/desert.png" alt="drink">
+          <p>Десерт*</p>
+          <p class="lunch_dish_text">*Можно добавить к любому заказу</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <section>
+
+      <h2>Супы</h2>
+
+      <div>
+        <button class="filter_button" data-kind="fish" data-active="false">Рыбное</button>
+        <button class="filter_button" data-kind="meat" data-active="false">Мясное</button>
+        <button class="filter_button" data-kind="veg" data-active="false">Вегетарианское</button>
+      </div>
+
+      <div class="dish" id="dish_soup"></div>
+
+    </section>
+
+    <section>
+
+      <h2>Главное блюдо</h2>
+
+      <div>
+        <button class="filter_button" data-kind="fish" data-active="false">Рыбное</button>
+        <button class="filter_button" data-kind="meat" data-active="false">Мясное</button>
+        <button class="filter_button" data-kind="veg" data-active="false">Вегетарианское</button>
+      </div>
+
+      <div class="dish" id="dish_main-course">
+
+      </div>
+
+    </section>
+
+    <section>
+
+      <h2>Салат или стартер</h2>
+
+      <div>
+        <button class="filter_button" data-kind="fish" data-active="false">Рыбное</button>
+        <button class="filter_button" data-kind="meat" data-active="false">Мясное</button>
+        <button class="filter_button" data-kind="veg" data-active="false">Вегетарианское</button>
+      </div>
+
+      <div class="dish" id="dish_salad">
+
+      </div>
+
+    </section>
+
+    <section>
+
+      <h2>Выберите напиток</h2>
+
+      <div>
+        <button class="filter_button" data-kind="hot" data-active="false">Горячее</button>
+        <button class="filter_button" data-kind="cold" data-active="false">Холодное</button>
+      </div>
+
+      <div class="dish" id="dish_drink">
+
+      </div>
+
+    </section>
+
+    <section>
+
+      <h2>Десерт</h2>
+
+      <div>
+        <button class="filter_button" data-kind="small" data-active="false">Маленькая порция</button>
+        <button class="filter_button" data-kind="medium" data-active="false">Средняя порция</button>
+        <button class="filter_button" data-kind="large" data-active="false">Большая порция</button>
+      </div>
+
+      <div class="dish" id="dish_dessert">
+
+      </div>
+
+    </section>
+
     </main>
-    
-    <form method="post" action="https://httpbin.org/post">
 
-        <h1>Ваш заказ</h1>
+    <div id="make_order">
+      <p id="make_order_price"></p>
+      <a href="basket.html"><button id="make_order_button" disabled>Перейти к оформлению</button></a>
+    </div>
 
-        <div>
-            <div id="order">
-
-                    <h2 id="order_h2">Корзина</h2>
-                    <h2 id="nothing_is_chosen">Вы пока ничего не выбрали</h2>
-
-                    <div id="order_inputs" class="dishes_input">
-                            <label>Суп</label>
-                            <p id="soup_p">-- Выберите суп --</p>
-                            <label>Главное блюдо</label>
-                            <p id="main_dish_p">-- Выберите главное блюдо --</p>
-                            <label>Салат или стартер</label>
-                            <p id="salad_p">-- Выберите салат --</p>
-                            <label>Напиток</label>
-                            <p id="drink_p">-- Выберите напиток --</p>
-                            <label>Дессерт</label>
-                            <p id="dessert_p">-- Выберите дессерт --</p>
- 
-                        <select name="soup" id="soup_inp" onchange="select_option('soup')" style="display:none;">
-                            <option value="" selected disabled hidden>--</option>
-                            <option value=1>Гаспачо - 195 рублей</option>
-                            <option value=2>Грибной суп-пюре - 185 рублей</option>
-                            <option value=3>Норвежский суп - 270 рублей</option>
-                            <option value=4>x - x рублей</option>
-                            <option value=5>x - x рублей</option>
-                            <option value=6>x - x рублей</option>
-                        </select>
-                        <select name="main_dish" id="main_dish_inp" onchange="select_option('main_dish')" style="display:none;">
-                            <option value="" selected disabled hidden>--</option>
-                            <option value=1>Жареная картошка - 150 рублей</option>
-                            <option value=2>Котлеты из курицы с картофельным пюре - 225 рублей</option>
-                            <option value=3>Лазанья - 385 рублей</option>
-                            <option value=4>x - x рублей</option>
-                            <option value=5>x - x рублей</option>
-                            <option value=6>x - x рублей</option>
-                        </select>
-                        <select name="salad" id="salad_inp" onchange="select_option('salad')" style="display:none;">
-                            <option value="" selected disabled hidden>--</option>
-                            <option value=1></option>
-                            <option value=2>x - x рублей</option>
-                            <option value=3>x - x рублей</option>
-                            <option value=4>x - x рублей</option>
-                            <option value=5>x - x рублей</option>
-                            <option value=6>x - x рублей</option>
-                        </select>
-                        <select name="drink" id="drink_inp" onchange="select_option('drink')" style="display:none;">
-                            <option value="" selected disabled hidden>--</option>
-                            <option value=1>Апельсиновый сок - 120 рублей</option>
-                            <option value=2>Морковный сок - 110 рублей</option>
-                            <option value=3>Яблочный сок - 90 рублей</option>
-                            <option value=4>x - x рублей</option>
-                            <option value=5>x - x рублей</option>
-                            <option value=6>x - x рублей</option>
-                        </select>
-                        <select name="dessert" id="dessert_inp" onchange="select_option('dessert')" style="display:none;">
-                            <option value="" selected disabled hidden>--</option>
-                            <option value=1>x - x рублей</option>
-                            <option value=2>x - x рублей</option>
-                            <option value=3>x - x рублей</option>
-                            <option value=4>x - x рублей</option>
-                            <option value=5>x - x рублей</option>
-                            <option value=6>x - x рублей</option>
-                        </select>
-                        
-                        <label>Комментарии к заказу</label>
-                        <textarea></textarea>
-
-                    </div>
-            </div>
-            <div id="client-info">
-
-                <h2>Ваши данные</h2>
-
-                <label>Имя</label> <input type="text" name="name-inp" required>
-                <label>Email</label> <input type="email" name="email-inp" required>
-                
-                <div class="left-placed-labels-inputs">
-                    <input type="checkbox" name="ann-inp" checked>
-                    <label>Получать информацию о скидках и акцциях</label>
-                </div>
-
-                <label>Номер телефона</label> <input type="tel" name="phone-inp" required>
-                <label>Адрес доставки</label> <input type="text" name="address-inp" required>
-
-                <label>Время доставки:</label>
-                <div class="left-placed-labels-inputs">
-                    <label>
-                    <input type="radio" value=1 name="delivery-time-type" checked>Как можно скорее
-                    </label>
-                    
-                    <label>
-                    <input type="radio" value=2 name="delivery-time-type">К указанному времени
-                    </label>
-                </div>
-                <div class= "timeinput" id="time-delivery-choice" style="visibility: hidden;">
-                    <label>Укажите время доставки</label>
-                    <input type="time" step=300 max="23:00" min="07:00" id="delivery-time">
-                </div>
-                <div id = 'buttons-block'>
-                    <button type="reset" id="reset">Сбросить</button>
-                    <button type="button" onclick="pre_submit()">Отправить</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    
-    <footer id="contacts">
-        <p>Позвонить нам +7-000-000-00</p>
-    </footer>
+  <footer id="Contacts">
+    <p>Позвонить нам +7-000-000-00-00</p>
+  </footer>
 
 </body>
 </html>

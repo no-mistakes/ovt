@@ -1,0 +1,103 @@
+:root {
+    --color1: #bc6c25;
+}
+@font-face {
+    font-family: "ALT";
+    src: url(../fonts/ALT_ROGUE.ttf);
+}
+body {
+    margin: 0;
+    font-family: "ALT";
+    background-color: #DDA15E;
+}
+header {
+    background-color: var(--color1);
+}
+.btn-id {
+    font-size: 3.5vw;
+    color: #fefae0;
+    transition: 0.45s;
+    text-shadow: 3px 3px 3px #283618;
+}
+.btn-id:hover {
+    color: #283618;
+    text-shadow:none
+}
+.mainText {
+    color: #fefae0;
+    font-size: 8vw;
+}
+.adv {
+    font-size: 5vw;
+    color: #220901;
+}
+.desc {
+    font-size: 3.5vw;
+    color: #220901;
+}
+.icons {
+    box-shadow: 3px 3px 7px black;
+    margin-bottom: 10%;
+}
+.pizza {
+    filter:brightness(70%)
+}
+.order{
+    padding: 5vw;
+    text-decoration: none;
+    font-size: 5vw;
+    color: #fefae0;
+    transition: 0.35s;
+}
+.order:hover {
+    color: #bc6c25;
+}
+.btnOrder {
+    left: 65%;
+}
+.descOrder {
+    left: 20%;
+    font-size: 4vw;
+    color: #fefae0;
+}
+form {
+    color: #220901;
+    font-size: 4vw;
+}
+.headForm{
+    font-size: 5vw;
+}
+.btnForm {
+    font-size: 5vw;
+    background-color: #220901;
+    color: #fefae0;
+}
+.formCont {
+    box-shadow: 3px 3px 9px 3px #220901
+}
+
+input::placeholder{
+    font-size: 1.5em;
+    font-family: "ALT";
+}
+
+input {
+    font-size: 10vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer{
+    width: 100%;
+    padding: 5vh;
+    background-color: #220901;
+    color: #fefae0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ssilki {
+    color: #fefae0;
+    transition: 0.3s;
+}
+.ssilki:hover{
+    color: #bc6c25;
+}

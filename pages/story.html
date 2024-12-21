@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Food Construct</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../styles/style.css"> 
+    <link rel="stylesheet" href="../styles/styleLunch.css">
+
+    <script src="../scripts/story.js"></script>
+</head>
+<body>
+
+    <header>
+
+        <h1>Food Construct</h1>
+    
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a class="active" href="lunch.html">Собрать ланч</a>
+            <a href="./basket.html">Оформить заказ</a>
+            <a href="../pages/story.html" id="active">История</a>
+            <a href="#Contacts">Контакты</a>
+        </nav>
+    
+      </header>
+
+<div class="container mt-4">
+    <h1>Мои заказы</h1>
+    <ul id="orders-list" class="list-group">
+    </ul>
+</div>
+
+<!-- Модальное окно для просмотра заказа -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1" role="dialog" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderDetailsModalLabel">Детали заказа</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="order-details-content">
+        <!-- Контент заказа -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ок</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно для редактирования заказа -->
+<div class="modal fade" id="orderEditModal" tabindex="-1" role="dialog" aria-labelledby="orderEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderEditModalLabel">Редактировать заказ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-order-form">
+          <!-- Форма для редактирования заказа -->
+          <div class="form-group">
+            <label for="full_name">ФИО</label>
+            <input type="text" class="form-control" id="full_name" name="full_name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="delivery_address">Адрес доставки</label>
+            <input type="text" class="form-control" id="delivery_address" name="delivery_address">
+          </div>
+          <div class="form-group">
+            <label for="delivery_time">Время доставки</label>
+            <input type="text" class="form-control" id="delivery_time" name="delivery_time">
+          </div>
+          <div class="form-group">
+            <label for="comment">Комментарий</label>
+            <textarea class="form-control" id="comment" name="comment"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button type="button" class="btn btn-primary" onclick="saveOrder()">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно для удаления заказа -->
+<div class="modal fade" id="orderDeleteModal" tabindex="-1" role="dialog" aria-labelledby="orderDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderDeleteModalLabel">Подтвердить удаление</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Вы уверены, что хотите удалить этот заказ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button type="button" class="btn btn-danger" onclick="deleteConfirmed()">Да</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="Contacts">
+    <p>Позвонить нам +7-000-000-00-00</p>
+</footer>
+
+</body>
+</html>

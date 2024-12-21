@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375px, initial-scale=1.0">
+    <title>Food Constructor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/main.scss">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container-xxl">
+            <div class="row p-3 text-center">
+                <div class="col">
+                    <a class="btn-id text-decoration-none" href="#about">About us</a>
+                </div>
+                <div class="col">
+                    <a class="col btn-id text-decoration-none" href="../index.html">Home</a>
+                </div>
+                <div class="col">
+                    <a class="col btn-id text-decoration-none" href="../pages/lunch.html">Order online</a>
+                </div>
+                <div class="col">
+                    <a class="col btn-id text-decoration-none" href="#footer">Contacts</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main>
+    <div class=" position-relative text-center">
+        <img src="../images/main.jpeg" class="img-fluid w-100">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <h1 class="mainText">FOOD CONSTRUCTOR</h1>
+        </div>
+    </div>
+
+    <div class="container-xxl" id="about">
+        <div class="col-12 text-center mt-5 adv">Advantages Food Construct</div>
+        <div class="row mt-5  text-center justify-content-evenly"> 
+            <div class="col-4 border border-black icons p-3">
+                <i class="fa-solid fa-truck-fast fa-3x" style="color: #fefae0;"></i>
+                <div class="desc  p-2">Fast Deliviry</div>
+            </div>
+            <div class="col-4 border border-black icons p-3">
+                <i class="fa-solid fa-box-open fa-3x" style="color: #fefae0;"></i>
+                <div class="desc p-2">Reliable packaging</div>
+            </div>
+        </div>
+
+        <div class="row mt-3  text-center justify-content-evenly"> 
+            <div class="col-4 border border-black icons p-3 ">
+                <i class="fa-solid fa-burger fa-3x" style="color: #fefae0;"></i>
+                <div class="desc p-2">Vegan burgers</div>
+            </div>
+            <div class="col-4 border border-black icons p-3">
+                <i class="fa-solid fa-martini-glass-citrus fa-3x" style="color: #fefae0;"></i>
+                <div class="desc p-2">Alcohol</div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" position-relative justify-content-around">
+        <img src="../images/pizza.jpg" class="img-fluid w-100 pizza">
+        <div class="position-absolute top-50 descOrder justify-content-center">Order right now at a 20% discount <br/> using the promocode "BOMBOCLAT"</div>
+        <div class="position-absolute top-50 btnOrder ">    
+            <a href="../pages/lunch.html" class="order border rounded-4 border-4">Order</a>
+        </div>
+    </div>
+    <form class="formCont container mt-5 mb-5 pb-5">
+        <h1 class="headForm pt-3">Feedback</h1>
+        <div class="mb-3  ">
+          <label for="Email1" class="form-label">Email address</label>
+          <input type="email" class="form-control" placeholder="Email address">
+          <div  class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3 ">
+          <label for="name1" class="form-label">Name</label>
+          <input type="name" class="form-control" placeholder="Name" size="">
+        </div>
+        <div class="mb-3 ">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" placeholder="Number" size="">
+          </div>
+        <div class="">
+            <button type="submit" class="btn btnForm text-center p-3">Submit</button>
+        </div>
+    </form>
+</main>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <p class="col ">Позвонить нам +79999999999</p>
+            <div class="col text-end ">
+                <a class="ssilki text-decoration-none" href="#about">About Us</a>
+                <a class='ssilki text-decoration-none' href="../index.html">Home</a>
+                <a class='ssilki text-decoration-none' href="../pages/lunch.html">Order</a>
+                <a class='ssilki text-decoration-none' href="#cont">Contacts</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+    <script src="https://kit.fontawesome.com/8081bca41d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
