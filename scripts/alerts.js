@@ -1,4 +1,4 @@
-import { bin } from "../scripts/order.js";
+import { bin } from "./basket.js";
 
 const notific = document.getElementById('notific');
 const notific_text = document.getElementById('notific_text');

@@ -42,3 +42,12 @@ export const loadServer = async (params) => {
   }
 };
 
+export const loadOrders = async () => {
+  try{
+    let response = await fetch(`https://edu.std-900.ist.mospolytech.ru/labs/api/orders?api_key=${api_key}`)
+    let orders = await response.json();
+    return orders;
+  } catch (e) {
+    alert(e);
+  }
+};

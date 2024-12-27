@@ -1,0 +1,173 @@
+table {
+  padding-right: 15rem;
+  margin-top: 3rem;
+  text-align: center;
+  border-top: 1px solid grey;
+  border-collapse: collapse;
+  font-size: 2.2rem;
+  margin-bottom: 5rem;
+}
+
+th, td {
+  width: 100vh;
+  padding: 2rem 0;
+  padding-right: 1rem;
+  border-bottom: 1px solid grey;
+}
+
+.big {
+  width: 30%;
+}
+
+.action {
+  display: flex;
+  justify-content: space-evenly;
+  width: auto;
+  height: 16rem;
+  align-items: center;
+}
+
+.action button {
+  background-color: white;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.action_img {
+  height: 3rem;
+  width: 3.6rem;
+}
+
+.modalBack {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.modalActive {
+  position: fixed;
+  z-index: 30;
+  width: 70rem;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color: white;
+  cursor: default;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modalClose img {
+  margin: 3px;
+  width: 24px;
+  height: 24px;
+} 
+
+.del {
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  padding: 2rem;
+  margin: 2rem;
+  font-size: 2rem;
+}
+
+/* .modalClose {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+} */
+
+.mod_but {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#yes {
+  background-color: red;
+  color: white;
+}
+
+.cancel, #ok {
+  background-color: lightgrey;
+}
+
+#save {
+  color: white;
+  background-color:rgb(51, 174, 133);
+}
+
+.mod_but button {
+  margin-right: 2rem;
+  border-radius: 5px;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+}
+
+.modalClose {
+  display: flex;
+  justify-content: space-between;
+}
+
+.see {
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.see_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalActive p {
+  font-size: 1.8rem;
+  padding: 0.6rem 0;
+}
+
+.see h5 {
+  padding: 0.8rem 0;
+  font-size: 2rem;
+}
+
+#soup-name, #main-course-name, #salad-name, #drink-name, #dessert-name {
+  display: none;
+}
+
+#soup-dish, #main-course-dish, #salad-dish, #drink-dish, #dessert-dish {
+  display: none;
+}
+
+#soup-, #main-course-, #salad-, #drink-, #dessert- {
+  display: none;
+}
+
+.see_block input {
+  width: 60%;
+  height: 3rem;
+  border: 2px solid grey;
+  font-size: 1.5rem;
+}
+
+.see textarea {
+  width: 100%;
+  height: 4.5rem;
+  border: 2px solid grey;
+  font-size: 1.5rem;
+}
+
